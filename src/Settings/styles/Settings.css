@@ -1,0 +1,45 @@
+.settings {
+  text-align: left;
+}
+
+.settings__label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.slider {
+  height: 40px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.slider-red {
+  border: 2px solid rgb(255, 0, 0);
+}
+
+.slider-green {
+  border: 2px solid rgb(0, 255, 0);
+}
+
+.slider-blue {
+  border: 2px solid rgb(0, 170, 255);
+}
+
+.thumb {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.thumb-red {
+  background-color: rgb(255, 0, 0);
+}
+
+.thumb-green {
+  background-color: rgb(0, 255, 0);
+}
+
+.thumb-blue {
+  background-color: rgb(0, 170, 255);
+}
