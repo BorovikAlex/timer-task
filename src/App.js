@@ -1,9 +1,8 @@
 import "./App.css";
-import Timer from "./Timer/Timer";
-import SettingsButton from "./Buttons/SettingsButton";
 import { useState } from "react";
 import Settings from "./Settings/Settings";
 import SettingsContext from "./Contexts/SettingsContext";
+import TimerWidget from "./TimerWidget/TimerWidget";
 
 function App() {
   const [showSettings, setShowSettings] = useState(false);
@@ -11,10 +10,6 @@ function App() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(5);
 
-  const settings = { hours, minutes, seconds };
-  function onTimerCompleted() {
-    alert("Finish");
-  }
   return (
     <main className="main">
       <SettingsContext.Provider
@@ -29,20 +24,7 @@ function App() {
           setShowSettings,
         }}
       >
-        {showSettings ? (
-          <Settings />
-        ) : (
-          <div>
-            <Timer
-              id="timer-1"
-              settings={settings}
-              onCompleted={() => onTimerCompleted()}
-            />
-            <div className="button-group">
-              <SettingsButton onClick={() => setShowSettings(true)} />
-            </div>
-          </div>
-        )}
+        {showSettings ? <Settings /> : <TimerWidget />}
       </SettingsContext.Provider>
     </main>
   );
