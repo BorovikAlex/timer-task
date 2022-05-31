@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Timer from "./Timer/Timer";
 import SettingsButton from "./Buttons/SettingsButton";
@@ -8,12 +7,14 @@ import SettingsContext from "./Contexts/SettingsContext";
 
 function App() {
   const [showSettings, setShowSettings] = useState(false);
-  const [hours, setHours] = useState(12);
-  const [minutes, setMinutes] = useState(45);
-  const [seconds, setSeconds] = useState(15);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(5);
 
   const settings = { hours, minutes, seconds };
-
+  function onTimerCompleted() {
+    alert("Finish");
+  }
   return (
     <main className="main">
       <SettingsContext.Provider
@@ -32,7 +33,11 @@ function App() {
           <Settings />
         ) : (
           <div>
-            <Timer settings={settings} />
+            <Timer
+              id="timer-1"
+              settings={settings}
+              onCompleted={() => onTimerCompleted()}
+            />
             <div className="button-group">
               <SettingsButton onClick={() => setShowSettings(true)} />
             </div>

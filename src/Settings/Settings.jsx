@@ -16,7 +16,7 @@ function Settings() {
         value={settingsInfo.hours}
         onChange={(newValue) => settingsInfo.setHours(newValue)}
         min={0}
-        max={24}
+        max={72}
       />
       <label className="settings__label">Minutes: {settingsInfo.minutes}</label>
       <ReactSlider
@@ -26,7 +26,7 @@ function Settings() {
         value={settingsInfo.minutes}
         onChange={(newValue) => settingsInfo.setMinutes(newValue)}
         min={0}
-        max={60}
+        max={59}
       />
       <label className="settings__label">Seconds: {settingsInfo.seconds}</label>
       <ReactSlider
@@ -36,7 +36,7 @@ function Settings() {
         value={settingsInfo.seconds}
         onChange={(newValue) => settingsInfo.setSeconds(newValue)}
         min={0}
-        max={60}
+        max={59}
       />
       <div style={{ textAlign: "center", marginTop: "20px" }}>
         <BackButton onClick={() => settingsInfo.setShowSettings(false)} />
